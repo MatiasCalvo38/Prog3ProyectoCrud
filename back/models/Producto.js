@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Definimos los campos que tendra cada producto en la base de datos
-const productoSchema = new mongoose.Schema({
+const productosSchema = new mongoose.Schema({
     nombre: {
         type: String,
         required: [true, 'El nombre es obligatorio']
@@ -25,4 +25,4 @@ const productoSchema = new mongoose.Schema({
 {timestamps: true} // Agrega automaticamente createdAt o updatedAt
 )
 
-module.exports = mongoose.model('Producto', productoSchema);
+module.exports = mongoose.model('Producto', productosSchema);

@@ -22,7 +22,9 @@ const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/productos_
 
 
 // Conexion al servidor y a MongoDB
-mongoose.connect(MONGO_URI).then(() => {
+mongoose
+.connect(MONGO_URI)
+.then(() => {
     console.log('Conectado a MongoDB');
     app.listen(PORT, () => {
         console.log(`Servidor corriendo en puerto ${PORT}`);
