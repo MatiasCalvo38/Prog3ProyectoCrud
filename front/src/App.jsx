@@ -17,7 +17,6 @@ const [mostrarFormulario,setMostrarFormulario]=useState(false) // Mostrar formul
 // Efectos
 // Cargar productos al montar el componente
 // Hace la solicitud inicial a la API para obtener la lista de productos
-
 useEffect(()=>{
   obtenerProductos()
 },[])
@@ -125,7 +124,7 @@ async function eliminarProducto(id){
 // Elige si se guarda un nuevo producto o se actualiza uno existente
 function handleGuardar(datosFormulario){
   if(productoEditar){
-    actualizarProducto(productoEditar._id,datosFormulario)
+    actualizarProducto(productoEditar._id, datosFormulario)
   }else{
     crearProducto(datosFormulario)
   }

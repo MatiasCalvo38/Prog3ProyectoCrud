@@ -14,7 +14,6 @@ export default function FormularioProducto({productoEditar, onGuardar, onCancela
 
     // Si recibimos un producto para editar, llenamos el formulario con sus datos
     // Si no, restablecemos los campos al estado inicial vacio
-
     useEffect(() => {
         if(productoEditar){
             setFormulario({

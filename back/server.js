@@ -19,8 +19,6 @@ app.use('/api/productos', productosRouter);
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/productos_db';
 
-
-
 // Conexion al servidor y a MongoDB
 mongoose
 .connect(MONGO_URI)

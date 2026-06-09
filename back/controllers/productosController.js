@@ -2,7 +2,6 @@ const Producto = require('../models/Producto');
 
 // GET/api/productos
 // Busca todos los productos en la base de dats y retorna una lista como un JSON
-
 async function obtenerProductos(req, res){
     try{
         const productos = await Producto.find().sort({createdAt: -1});
@@ -15,7 +14,6 @@ async function obtenerProductos(req, res){
 
 // GET/api/productos/:id
 // Busca un producto por su ID y devuelve sus datos si lo encuentra
-
 async function obtenerProducto(req, res){
     try{
         const producto = await Producto.findById(req.params.id);
@@ -32,7 +30,6 @@ async function obtenerProducto(req, res){
 
 // POST/api/productos
 // Crea un nuevo producto con los datos enviados en el cuerpo de la peticion
-
 async function crearProducto(req, res){
     try{
         const nuevoProducto = new Producto(req.body)
@@ -46,8 +43,8 @@ async function crearProducto(req, res){
 }
 
 // PUT/api/productos/:id
-// Actualiza un producto existente por su ID con los datos enviados y devuelve el producto actualizado
-
+// Actualiza un producto existente por su ID con los datos enviados y
+// devuelve el producto actualizado
 async function actualizarProducto(req, res){
     try{
         const productoActualizado = await Producto.findByIdAndUpdate(req.params.id, req.body, {new: true});
@@ -64,7 +61,6 @@ async function actualizarProducto(req, res){
 
 // DELETE/api/productos/:id
 // Elimina un producto por su ID y devuelve un mensaje de confirmacion
-
 async function eliminarProducto(req, res){
     try{
         const productoEliminado = await Producto.findByIdAndDelete(req.params.id);
