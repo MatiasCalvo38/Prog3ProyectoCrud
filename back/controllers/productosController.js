@@ -47,7 +47,7 @@ async function crearProducto(req, res){
 // devuelve el producto actualizado
 async function actualizarProducto(req, res){
     try{
-        const productoActualizado = await Producto.findByIdAndUpdate(req.params.id, req.body, {new: true});
+        const productoActualizado = await Producto.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true});
 
         if(!productoActualizado){
             return res.status(404).json({mensaje: 'Producto no encontrado'});

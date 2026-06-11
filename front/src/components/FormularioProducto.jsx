@@ -38,6 +38,11 @@ export default function FormularioProducto({productoEditar, onGuardar, onCancela
     function handleSubmit(evento){
         evento.preventDefault();
 
+        if(!formulario.nombre.trim()){
+            alert('El nombre no puede estar vacio');
+            return;
+        }
+
         onGuardar({
             ...formulario,
             precio: Number(formulario.precio),
